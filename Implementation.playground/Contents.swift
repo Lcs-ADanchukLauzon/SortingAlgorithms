@@ -113,3 +113,41 @@ numbers
 
 // Begin your implementation below...
 
+var sortedNumbers : [Int] = []
+
+
+for _ in 1...20 {
+    numbers.append( random(between: 1, and: 50) )
+}
+
+var lowest = 0
+var indexLowest = 0
+
+for number in numbers {
+    lowest = number
+  
+    for i in 0..<numbers.count {
+        if numbers[i] < lowest {
+            lowest = numbers[i]
+           indexLowest = i
+        }
+      
+        
+    }
+ numbers.remove(at: numbers[indexLowest])
+    sortedNumbers.append(lowest)
+   
+ }
+
+sortedNumbers
+
+
+
+
+
+
+
+
+
+
+
