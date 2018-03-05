@@ -120,24 +120,65 @@ for _ in 1...20 {
     numbers.append( random(between: 1, and: 50) )
 }
 
+//numbers.append(22)
+//numbers.append(18)
+//numbers.append(20)
+//numbers.append(30)
+//numbers.append(12)
+//
+//var lowest = 0
+//var indexLowest = 0
+//var compaired = 0
+//
+//
+//for number in 0...numbers.count - 1 {
+//    compaired = numbers[number]
+//
+//    for i in 0...numbers.count - 1{
+//        if compaired > numbers[i] {
+//            lowest = numbers[i]
+//
+//           indexLowest = i
+//        }
+//
+//    }
+//    numbers.remove(at: numbers[indexLowest])
+//    sortedNumbers.append(lowest)
+//
+// }
+
+
 var lowest = 0
 var indexLowest = 0
 
-for number in numbers {
-    lowest = number
-  
-    for i in 0..<numbers.count {
-        if numbers[i] < lowest {
+//Starts the process for every number
+for _ in 0...numbers.count - 1 {
+    
+    // The first number in the array is put into a variable
+    lowest = numbers[0]
+    
+    // The first variable is compaired to each other index in the array
+    for i in 0...numbers.count - 1{
+        
+        // if the initial lowest number is bigger than a value then the value becomes the new lowest
+        if lowest >= numbers[i] {
             lowest = numbers[i]
-           indexLowest = i
+            
+            indexLowest = i
+            
         }
-      
         
     }
- numbers.remove(at: numbers[indexLowest])
+    
+    
+    // Removes the lowest value from the initial array after appending it to a new array
     sortedNumbers.append(lowest)
-   
- }
+    numbers.remove(at: indexLowest)
+    
+    
+}
+
+
 
 sortedNumbers
 
